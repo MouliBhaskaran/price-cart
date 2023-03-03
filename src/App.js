@@ -7,7 +7,7 @@ function App() {
       plan: "FREE",
       price: "$0",
       user: "Single User",
-      highlight:false,
+      highlight: false,
       userEnabler: true,
       storage: "5GB Storage",
       storageEnabler: true,
@@ -21,7 +21,7 @@ function App() {
       phoneSupportEnabler: false,
       subDomain: "Free Subdomain",
       subDomainEnabler: false,
-      subDomainHighlight:false,
+      subDomainHighlight: false,
       statusPlan: "Monthly Status Reports",
       statusPlanEnabler: false,
     },
@@ -29,7 +29,7 @@ function App() {
       plan: "PLUS",
       price: "$9",
       user: "5 User",
-      highlight:true,
+      highlight: true,
       userEnabler: true,
       storage: "50GB Storage",
       storageEnabler: true,
@@ -43,7 +43,7 @@ function App() {
       phoneSupportEnabler: true,
       subDomain: "Free Subdomain",
       subDomainEnabler: true,
-      subDomainHighlight:false,
+      subDomainHighlight: false,
       statusPlan: "Monthly Status Reports",
       statusPlanEnabler: false,
     },
@@ -51,7 +51,7 @@ function App() {
       plan: "PRO",
       price: "$49",
       user: "Unlimited User",
-      highlight:true,
+      highlight: true,
       userEnabler: true,
       storage: "150GB Storage",
       storageEnabler: true,
@@ -65,7 +65,7 @@ function App() {
       phoneSupportEnabler: true,
       subDomain: "Unlimited Free Subdomain",
       subDomainEnabler: true,
-      subDomainHighlight:true,
+      subDomainHighlight: true,
       statusPlan: "Monthly Status Reports",
       statusPlanEnabler: true,
     },
@@ -75,9 +75,16 @@ function App() {
       <section className="pricing py-5">
         <div className="container">
           <div className="row">
-            <Pricecart value={data[0]} />
+          {/* Approach1  */}
+            {/* <Pricecart value={data[0]} />
             <Pricecart value={data[1]} />
-            <Pricecart value={data[2]} />
+            <Pricecart value={data[2]} /> */}
+
+          {/* Approach2 */}
+
+            {data.map((e, i) => {
+              return <Pricecart value={e} key={i} />;
+            })}
           </div>
         </div>
       </section>
